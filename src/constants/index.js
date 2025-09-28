@@ -1,41 +1,22 @@
 export const myProjects = [
   {
-    id: 1,
-    title: "E-commerce Platform",
-    description:
-      "Facilitates purchases from international websites like Amazon and eBay, allowing customers to shop from these sites and have products delivered domestically.",
-    subDescription: [
-      "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
-      "Implemented secure authentication and database management using ASP.NET Core Identity and Entity Framework Core.",
-      "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
-      "Added payment systems, localization, and product filtering for functionality improvements.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/accessories.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 2,
-        name: ".Net",
-        path: "/assets/logos/dotnet.svg",
-      },
-      {
-        id: 3,
-        name: "Ef Core",
-        path: "/assets/logos/efcore.png",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
+  id: 1,
+  title: "Elite Controller Showcase",
+  description: "A modern, dark-themed landing page for the Xbox Elite Controller, designed to highlight its features with a sleek and intuitive layout.",
+  subDescription: [
+    "Crafted the UI entirely in Figma with a contemporary dark theme",
+    "Built an interactive prototype to showcase smooth user interactions",
+    "Focused on clean layouts to highlight key controller features",
+    "Optimized for responsive design across desktop and tablet devices"
+  ],
+  href: "https://www.figma.com/design/phgBtU6mBrfe4TJ9cK9d2l/1st-project?node-id=22-14&m=dev&t=Lkv8wENtmgDg71lE-1",
+  logo: "",
+  image: "/assets/projects/black-page.png",
+  tags: [
+    { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+    { id: 2, name: "Photoshop", path: "/assets/logos/adobe-photoshop.svg" }
+  ]
+},
   {
     id: 2,
     title: "Authentication & Authorization System",
@@ -51,26 +32,8 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/auth-system.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Auth0",
-        path: "/assets/logos/auth0.svg",
-      },
-      {
-        id: 2,
-        name: "React",
-        path: "/assets/logos/react.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+      { id: 2, name: "Illustrator", path: "/assets/logos/adobe-illustrator.svg" },
     ],
   },
   {
@@ -88,26 +51,8 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/blazor-app.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: ".NET Core",
-        path: "/assets/logos/dotnetcore.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+      { id: 2, name: "Adobe XD", path: "/assets/logos/adobe-xd.svg" },
     ],
   },
   {
@@ -125,26 +70,8 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/game-engine.jpg",
     tags: [
-      {
-        id: 1,
-        name: "C++",
-        path: "/assets/logos/cplusplus.svg",
-      },
-      {
-        id: 2,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 3,
-        name: "Git",
-        path: "/assets/logos/git.svg",
-      },
-      {
-        id: 4,
-        name: "Microsoft",
-        path: "/assets/logos/microsoft.svg",
-      },
+      { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+      { id: 2, name: "Canva", path: "/assets/logos/canva.svg" },
     ],
   },
   {
@@ -162,26 +89,8 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/wordpress-theme.jpg",
     tags: [
-      {
-        id: 1,
-        name: "WordPress",
-        path: "/assets/logos/wordpress.svg",
-      },
-      {
-        id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
-      },
-      {
-        id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
-      },
-      {
-        id: 4,
-        name: "Vite.js",
-        path: "/assets/logos/vitejs.svg",
-      },
+      { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+      { id: 2, name: "Photoshop", path: "/assets/logos/adobe-photoshop.svg" },
     ],
   },
   {
@@ -199,26 +108,8 @@ export const myProjects = [
     logo: "",
     image: "/assets/projects/elearning.jpg",
     tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: "Azure",
-        path: "/assets/logos/azure.svg",
-      },
-      {
-        id: 3,
-        name: "Stripe",
-        path: "/assets/logos/stripe.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
+      { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+      { id: 2, name: "Illustrator", path: "/assets/logos/adobe-illustrator.svg" },
     ],
   },
 ];
