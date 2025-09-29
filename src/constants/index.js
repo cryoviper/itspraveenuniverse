@@ -1,41 +1,42 @@
 export const myProjects = [
   {
-  id: 1,
-  title: "Elite Controller Showcase",
-  description: "A modern, dark-themed landing page for the Xbox Elite Controller, designed to highlight its features with a sleek and intuitive layout.",
-  subDescription: [
-    "Crafted the UI entirely in Figma with a contemporary dark theme",
-    "Built an interactive prototype to showcase smooth user interactions",
-    "Focused on clean layouts to highlight key controller features",
-    "Optimized for responsive design across desktop and tablet devices"
-  ],
-  href: "https://www.figma.com/design/phgBtU6mBrfe4TJ9cK9d2l/1st-project?node-id=22-14&m=dev&t=Lkv8wENtmgDg71lE-1",
-  logo: "",
-  image: "/assets/projects/black-page.png",
-  tags: [
-    { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
-    { id: 2, name: "Photoshop", path: "/assets/logos/adobe-photoshop.svg" }
-  ]
-},
-  {
-    id: 2,
-    title: "Authentication & Authorization System",
+    id: 1,
+    title: "Elite Controller Showcase",
     description:
-      "A secure authentication and authorization system using Auth0 for seamless user management.",
+      "A modern, dark-themed landing page for the Xbox Elite Controller, designed to highlight its features with a sleek and intuitive layout.",
     subDescription: [
-      "Integrated Auth0 for authentication, supporting OAuth, JWT, and multi-factor authentication.",
-      "Implemented role-based access control (RBAC) for fine-grained user permissions.",
-      "Developed a React-based frontend with Tailwind CSS for a sleek user experience.",
-      "Connected to a secure SQLite database for user data storage.",
+      "Crafted the UI entirely in Figma with a contemporary dark theme",
+      "Built an interactive prototype to showcase smooth user interactions",
+      "Focused on clean layouts to highlight key controller features",
+      "Optimized for responsive design across desktop and tablet devices",
     ],
-    href: "",
+    href: "https://www.figma.com/design/phgBtU6mBrfe4TJ9cK9d2l/1st-project?node-id=22-14&m=dev&t=Lkv8wENtmgDg71lE-1",
     logo: "",
-    image: "/assets/projects/auth-system.jpg",
+    image: "/assets/projects/black-page.png",
     tags: [
       { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
-      { id: 2, name: "Illustrator", path: "/assets/logos/adobe-illustrator.svg" },
+      { id: 2, name: "Photoshop", path: "/assets/logos/adobe-photoshop.svg" },
     ],
   },
+  {
+  id: 2,
+  title: "Web Dev Portfolio",
+  description:
+    "A modern and professional portfolio website designed to solve the problem of showcasing skills and projects with clarity and impact.",
+  subDescription: [
+    "Crafted with a sleek, responsive layout for all devices",
+    "Designed using Figma with a focus on clarity and usability",
+    "Showcases projects in a structured, professional manner",
+    "Optimized visuals for fast loading and accessibility",
+  ],
+  href: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/9cYFVuEvdp0cGYCKx4vSB0/web-page?node-id=1-41",
+  logo: "",
+  image: "/assets/projects/devpage.png",
+  tags: [
+    { id: 1, name: "Figma", path: "/assets/logos/figma.svg" },
+    { id: 2, name: "Photoshop", path: "/assets/logos/adobe-photoshop.svg" },
+  ],
+},
   {
     id: 3,
     title: "Blazor Web App",

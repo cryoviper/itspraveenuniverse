@@ -10,32 +10,45 @@ const Project = ({
   tags,
   setPreview,
 }) => {
-  const [isHidden, setIsHidden] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
       <div
-        className="flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0"
+        className="flex flex-wrap items-center justify-between py-10 sm:flex-nowrap"
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
       >
+        {/* Left: Title & Tags */}
         <div>
-          <p className="text-2xl">{title}</p>
-          <div className="flex gap-5 mt-2 text-sand">
+          <p className="text-2xl font-semibold text-white">{title}</p>
+          <div className="flex flex-wrap gap-4 mt-3 text-sm text-sand">
             {tags.map((tag) => (
-              <span key={tag.id}>{tag.name}</span>
+              <span
+                key={tag.id}
+                className="px-2 py-1 rounded bg-white/10 text-white/80"
+              >
+                {tag.name}
+              </span>
             ))}
           </div>
         </div>
+
+        {/* Right: Read More Button */}
         <button
-          onClick={() => setIsHidden(true)}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
+          onClick={() => setIsOpen(true)}
+          className="flex items-center gap-2 mt-6 text-sm font-medium text-white transition-colors duration-200 hover:text-lavender sm:mt-0"
         >
           Read More
-          <img src="assets/arrow-right.svg" className="w-5" />
+          <img src="assets/arrow-right.svg" alt="arrow" className="w-5 h-5" />
         </button>
       </div>
-      <div className="bg-gradient-to-r from-transparent via-neutral-700 to-transparent h-[1px] w-full" />
-      {isHidden && (
+
+      {/* Divider */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-700 to-transparent" />
+
+      {/* Details Modal/Overlay */}
+      {isOpen && (
         <ProjectDetails
           title={title}
           description={description}
@@ -43,7 +56,7 @@ const Project = ({
           image={image}
           tags={tags}
           href={href}
-          closeModal={() => setIsHidden(false)}
+          closeModal={() => setIsOpen(false)}
         />
       )}
     </>
