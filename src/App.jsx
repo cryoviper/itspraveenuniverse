@@ -10,14 +10,17 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   useEffect(() => {
+    // Detect touch/mobile devices
+    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    if (isTouch) return; // Skip smooth scroll on mobile
+
     let current = window.scrollY;
     let target = window.scrollY;
     let velocity = 0;
 
-    // Portfolio-perfect values
-    const friction = 0.95;    // slow momentum decay
-    const ease = 0.05;        // smooth interpolation
-    const wheelFactor = 0.06; // very low wheel increment for readability
+    const friction = 0.95;
+    const ease = 0.05;
+    const wheelFactor = 0.06;
 
     const onWheel = (e) => {
       e.preventDefault();
@@ -41,7 +44,6 @@ const App = () => {
       window.scrollTo(0, current);
 
       velocity *= friction;
-
       requestAnimationFrame(animate);
     };
 
@@ -61,28 +63,46 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container mx-auto max-w-7xl">
-      <Navbar />
-      <div id="home">
-        <Hero />
+    <>
+      {/* Hide scrollbar */}
+      <style>
+        {`
+          /* Hide scrollbar for Chrome, Safari, Opera */
+          ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+          }
+          /* Hide scrollbar for Firefox */
+          body {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+          }
+        `}
+      </style>
+
+      <div className="container mx-auto max-w-7xl">
+        <Navbar />
+        <div id="home">
+          <Hero />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="work">
+          <Projects />
+        </div>
+        <div>
+          <Experiences />
+        </div>
+        <div>
+          <Testimonial />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
+        <Footer />
       </div>
-      <div id="about">
-        <About />
-      </div>
-      <div id="work">
-        <Projects />
-      </div>
-      <div>
-        <Experiences />
-      </div>
-      <div>
-        <Testimonial />
-      </div>
-      <div id="contact">
-        <Contact />
-      </div>
-      <Footer />
-    </div>
+    </>
   );
 };
 
