@@ -21,13 +21,13 @@ const About = () => {
           />
 
           {/* Dark overlay with subtle starry/glow effect */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent pointer-events-none rounded-lg" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08)_0%,transparent_70%)] pointer-events-none rounded-lg" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent pointer-events-none rounded-lg" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05)_0%,transparent_80%)] pointer-events-none rounded-lg" />
 
           {/* Text */}
           <div className="z-10">
             <p className="headtext">Hi, I'm Praveen</p>
-            <p className="subtext leading-relaxed text-gray-300">
+            <p className="subtext leading-relaxed text-gray-200">
               I design intuitive, engaging, and user-focused digital experiences.
               With nearly two years of UI/UX experience, I aim to craft products
               that feel simple, seamless, and meaningful.
@@ -35,7 +35,7 @@ const About = () => {
           </div>
 
           {/* Bottom gradient */}
-          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-[#062E2E]/90 via-[#093636]/70 to-transparent rounded-b-lg" />
+          <div className="absolute inset-x-0 pointer-events-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-[#073636]/90 via-[#0c4a4a]/60 to-transparent rounded-b-lg" />
         </div>
 
         {/* Grid 2 */}
@@ -47,8 +47,8 @@ const About = () => {
             <p
               className="flex items-end text-5xl font-bold select-none"
               style={{
-                color: "#E0E0E0",
-                textShadow: "0 1px 3px rgba(0,0,0,0.6)",
+                color: "#F0F0F0",
+                textShadow: "0 2px 6px rgba(0,0,0,0.5)",
                 letterSpacing: "0.03em",
                 fontWeight: "700",
               }}
@@ -74,10 +74,10 @@ const About = () => {
         </div>
 
         {/* Grid 3 */}
-        <div className="grid-black-color grid-3 relative rounded-lg p-6 bg-gradient-to-tr from-[#1a1a1a] to-[#2d2d2d]">
+        <div className="grid-black-color grid-3 relative rounded-lg p-6 bg-gradient-to-tr from-[#1c1c1c] to-[#303030]">
           <div className="z-10 w-[50%]">
             <p className="headtext">Time Zone</p>
-            <p className="subtext leading-relaxed text-gray-400">
+            <p className="subtext leading-relaxed text-gray-300">
               I'm based in Mars and open to remote work across the globe.
             </p>
           </div>
@@ -90,16 +90,16 @@ const About = () => {
         <div
           className="grid-4 rounded-lg"
           style={{
-            background: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)", 
-            border: "1px solid rgba(255, 255, 255, 0.05)",
-            boxShadow: "0 0 16px rgba(255, 60, 172, 0.25)",
+            background: "linear-gradient(135deg, #100d27, #41307a, #2b2940)", 
+            border: "1px solid rgba(255, 255, 255, 0.07)",
+            boxShadow: "0 0 20px rgba(255, 60, 172, 0.2)",
             padding: "1.5rem",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             gap: "1rem",
-            color: "#E0E0E0",
+            color: "#F0F0F0",
           }}
         >
           <p className="text-center headtext">
@@ -112,7 +112,7 @@ const About = () => {
         <div className="grid-default-color grid-5 relative rounded-lg p-6">
           <div className="z-10 w-[50%]">
             <p className="headtext">Design Stack</p>
-            <p className="subtext leading-relaxed text-gray-400">
+            <p className="subtext leading-relaxed text-gray-300">
               I work with diverse UI/UX tools and frameworks to deliver
               clean, engaging, and user-centered designs.
             </p>

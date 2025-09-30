@@ -1,16 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 
 function Navigation({ onClickLink }) {
-  // Smooth scroll handler with easing
   const handleScroll = (e, targetId) => {
     e.preventDefault();
     const target = document.getElementById(targetId);
     if (target) {
       const startPosition = window.scrollY;
-      const targetPosition = target.getBoundingClientRect().top + window.scrollY;
+      const targetPosition =
+        target.getBoundingClientRect().top + window.scrollY;
       const distance = targetPosition - startPosition;
-      const duration = 700; // 0.7s
+      const duration = 700;
       let start = null;
 
       const easeInOutQuad = (t) =>
@@ -27,7 +27,7 @@ function Navigation({ onClickLink }) {
       window.requestAnimationFrame(step);
     }
 
-    if (onClickLink) onClickLink(); // close mobile menu
+    if (onClickLink) onClickLink();
   };
 
   return (
@@ -74,11 +74,40 @@ function Navigation({ onClickLink }) {
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [show, setShow] = useState(true);
+  let lastScroll = 0;
 
   const handleLinkClick = () => setIsOpen(false);
 
+  useEffect(() => {
+    const navbarEl = document.querySelector("div.fixed");
+    const navbarHeight = navbarEl ? navbarEl.offsetHeight : 0;
+
+    const handleScrollEvent = () => {
+      const currentScroll = window.pageYOffset;
+
+      // scroll down past its own height → hide
+      if (currentScroll > navbarHeight && currentScroll > lastScroll) {
+        setShow(false);
+      } 
+      // scroll up → show
+      else if (currentScroll < lastScroll) {
+        setShow(true);
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener("scroll", handleScrollEvent);
+    return () => window.removeEventListener("scroll", handleScrollEvent);
+  }, []);
+
   return (
-    <div className="fixed inset-x-0 top-0 z-50 w-full backdrop-blur-lg bg-primary/40">
+    <div
+      className={`fixed inset-x-0 top-0 z-50 w-full backdrop-blur-lg bg-primary/40 transition-transform duration-300 ${
+        show ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="mx-auto c-space max-w-7xl">
         <div className="flex items-center justify-between py-2 sm:py-0">
           <a
