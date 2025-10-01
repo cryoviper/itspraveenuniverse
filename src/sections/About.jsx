@@ -44,28 +44,33 @@ const About = () => {
             ref={grid2Container}
             className="flex items-center justify-center w-full h-full relative"
           >
+            {/* Gradient text FLOW IS DESIGN */}
             <p
-              className="flex items-end text-5xl font-bold select-none"
+              className="flex items-end text-5xl font-bold select-none bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500"
               style={{
-                color: "#F0F0F0",
-                textShadow: "0 2px 6px rgba(0,0,0,0.5)",
                 letterSpacing: "0.03em",
                 fontWeight: "700",
+                textShadow: "0 2px 6px rgba(0,0,0,0.25)",
               }}
             >
               FLOW IS DESIGN
             </p>
+
+            {/* Cards -> hidden on mobile (only show md and above) */}
             <Card
+              className="hidden md:block"
               style={{ rotate: "75deg", top: "45%", left: "20%" }}
               text="GRASP"
               containerRef={grid2Container}
             />
             <Card
+              className="hidden md:block"
               style={{ rotate: "-30deg", top: "60%", left: "45%" }}
               text="SOLID"
               containerRef={grid2Container}
             />
             <Card
+              className="hidden md:block"
               style={{ rotate: "20deg", top: "10%", left: "38%" }}
               text="Craft"
               containerRef={grid2Container}

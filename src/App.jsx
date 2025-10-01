@@ -23,6 +23,9 @@ const App = () => {
     const wheelFactor = 0.06;
 
     const onWheel = (e) => {
+      // ✅ Ignore wheel inside scrollable modals/sections
+      if (e.target.closest(".scrollable")) return;
+
       e.preventDefault();
       velocity += e.deltaY * wheelFactor;
     };

@@ -9,8 +9,19 @@ const Project = ({
   image,
   tags,
   setPreview,
+  setScrollLocked, // 👈
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+    setScrollLocked(true); // 👈 lock scroll
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
+    setScrollLocked(false); // 👈 unlock scroll
+  };
 
   return (
     <>
@@ -19,7 +30,6 @@ const Project = ({
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
       >
-        {/* Left: Title & Tags */}
         <div>
           <p className="text-2xl font-semibold text-white">{title}</p>
           <div className="flex flex-wrap gap-4 mt-3 text-sm text-sand">
@@ -34,9 +44,8 @@ const Project = ({
           </div>
         </div>
 
-        {/* Right: Read More Button */}
         <button
-          onClick={() => setIsOpen(true)}
+          onClick={openModal}
           className="flex items-center gap-2 mt-6 text-sm font-medium text-white transition-colors duration-200 hover:text-lavender sm:mt-0"
         >
           Read More
@@ -44,10 +53,8 @@ const Project = ({
         </button>
       </div>
 
-      {/* Divider */}
       <div className="h-px w-full bg-gradient-to-r from-transparent via-neutral-700 to-transparent" />
 
-      {/* Details Modal/Overlay */}
       {isOpen && (
         <ProjectDetails
           title={title}
@@ -56,7 +63,7 @@ const Project = ({
           image={image}
           tags={tags}
           href={href}
-          closeModal={() => setIsOpen(false)}
+          closeModal={closeModal}
         />
       )}
     </>
