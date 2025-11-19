@@ -18,8 +18,8 @@ const About = () => {
         <div className="flex items-end grid-default-color grid-1 relative overflow-hidden rounded-lg p-4 md:p-6">
           <img
             src="assets/coding-pov.png"
-            className="absolute scale-[1.1] -right-[4rem] -top-[0.5rem] 
-                      md:scale-[2.5] md:left-8 md:inset-y-0 lg:scale-[1.3]"
+            className="absolute scale-[1.1] left-1/2 -translate-x-1/2 -top-[0.5rem]
+                      md:scale-[2.5] md:left-8 md:translate-x-0 md:inset-y-0 lg:scale-[1.3]"
             alt="Coding POV"
           />
 
