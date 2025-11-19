@@ -9,24 +9,50 @@ import Footer from "./sections/Footer";
 
 const App = () => {
   useEffect(() => {
-    // Detect touch/mobile devices
-    const isTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouch) return; // Skip smooth scroll on mobile
-
     let current = window.scrollY;
     let target = window.scrollY;
     let velocity = 0;
+    let animating = false;
+    let isAnchorScroll = false;
 
     const friction = 0.95;
     const ease = 0.05;
+    const anchorEase = 0.12;
     const wheelFactor = 0.06;
+    const touchFactor = 0.2;
+
+    let lastTouchY = 0;
 
     const onWheel = (e) => {
-      // ✅ Ignore wheel inside scrollable modals/sections
       if (e.target.closest(".scrollable")) return;
+
+      if (e.deltaY === 0) return;
 
       e.preventDefault();
       velocity += e.deltaY * wheelFactor;
+      if (!animating) {
+        animating = true;
+        animate();
+      }
+    };
+
+    const onTouchStart = (e) => {
+      lastTouchY = e.touches[0].clientY;
+    };
+
+    const onTouchMove = (e) => {
+      if (e.target.closest(".scrollable")) return;
+
+      const touchY = e.touches[0].clientY;
+      const deltaY = lastTouchY - touchY;
+      lastTouchY = touchY;
+
+      e.preventDefault();
+      velocity += deltaY * touchFactor;
+      if (!animating) {
+        animating = true;
+        animate();
+      }
     };
 
     const onAnchorClick = (e) => {
@@ -36,28 +62,46 @@ const App = () => {
       const el = document.querySelector(href);
       if (!el) return;
       target = el.offsetTop;
+      velocity = 0;
+      isAnchorScroll = true;
+      if (!animating) {
+        animating = true;
+        animate();
+      }
     };
 
     const animate = () => {
+      const currentEase = isAnchorScroll ? anchorEase : ease;
       target += velocity;
       target = Math.max(0, Math.min(target, document.body.scrollHeight - window.innerHeight));
 
-      current += (target - current) * ease;
+      current += (target - current) * currentEase;
       window.scrollTo(0, current);
 
       velocity *= friction;
-      requestAnimationFrame(animate);
+
+      if (Math.abs(velocity) > 0.01 || Math.abs(target - current) > 1) {
+        requestAnimationFrame(animate);
+      } else {
+        animating = false;
+        if (isAnchorScroll) {
+          target = current; // New: Reset target to current after anchor scroll settles, so wheel scroll starts fresh
+        }
+        isAnchorScroll = false;
+      }
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("touchstart", onTouchStart, { passive: false });
+    window.addEventListener("touchmove", onTouchMove, { passive: false });
     document.querySelectorAll('a[href^="#"]').forEach((link) => {
       link.addEventListener("click", onAnchorClick);
     });
 
-    animate();
-
     return () => {
       window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
       document.querySelectorAll('a[href^="#"]').forEach((link) => {
         link.removeEventListener("click", onAnchorClick);
       });
@@ -66,15 +110,12 @@ const App = () => {
 
   return (
     <>
-      {/* Hide scrollbar */}
       <style>
         {`
-          /* Hide scrollbar for Chrome, Safari, Opera */
           ::-webkit-scrollbar {
             width: 0px;
             background: transparent;
           }
-          /* Hide scrollbar for Firefox */
           body {
             scrollbar-width: none;
             -ms-overflow-style: none;
