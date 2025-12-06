@@ -1,16 +1,16 @@
 export const myProjects = [
 {
   id: 5,
-  title: "HoodieHub: Modern Hoodie Store",
+  title: "Surreal Art Gallery Website",
   description:
-    "A sleek, modern e-commerce website designed to showcase hoodies with minimal design, smooth interactions, and an engaging shopping experience.",
+    "A modern abstract art website designed to showcase surreal concepts through bold visuals, creative layouts, and smooth digital motion.",
   subDescription: [
-    "Crafted a bold, high-impact homepage highlighting featured hoodies",
-    "Implemented smooth scroll animations and hover effects for product interaction",
-    "Focused on clean layouts and intuitive navigation for optimal UX",
-    "Designed a fully responsive layout optimized for all devices",
+    "Designed an immersive homepage to highlight featured abstract artworks",
+    "Implemented smooth motion effects and interactive transitions",
+    "Maintained a clean yet expressive layout for intuitive navigation",
+    "Optimized the entire design for seamless responsiveness across devices",
   ],
-  video: "/assets/projects/project3.mp4",
+  video: "",
   logo: "",
   image: "/assets/projects/wordpress-theme.jpg",
   tags: [
@@ -20,12 +20,12 @@ export const myProjects = [
 },
 {
   id: 4,
-  title: "NextPlay: Gaming Experience Website",
+  title: "Gaming Website UI Design",
   description:
-    "A modern gaming portfolio site designed to capture the energy of next-gen titles through minimal design, smooth motion, and immersive interactions.",
+    "A modern gaming website UI designed to capture the energy of next-gen titles through clean layouts, smooth motion, and immersive interactions.",
   subDescription: [
     "Designed a high-impact homepage with bold typography and dynamic visuals",
-    "Built seamless scroll animations and hover effects for an interactive feel",
+    "Built seamless scroll animations and hover effects for interactivity",
     "Focused on clarity and flow to reflect professional UI/UX standards",
     "Crafted a fully responsive layout optimized for all screens and devices",
   ],
@@ -39,16 +39,16 @@ export const myProjects = [
 },
 {
   id: 3,
-  title: "ExoVerse: Interactive Planetary Animation",
+  title: "Modern Streetwear Brand Website",
   description:
-    "An immersive 3D animation project showcasing dynamically generated exoplanets beyond our solar system, built with modern web technologies.",
+    "A modern streetwear brand website designed to showcase bold fashion collections with strong visuals and clean digital presentation.",
   subDescription: [
-    "Created realistic planet animations featuring diverse terrains, atmospheres, and rotations",
-    "Implemented smooth motion and interaction using WebGL and Three.js",
-    "Designed a minimal yet captivating UI to enhance the cosmic viewing experience",
-    "Optimized performance for real-time rendering across devices",
+    "Created a high-impact homepage to highlight featured clothing drops",
+    "Integrated smooth animations and dynamic product transitions",
+    "Balanced expressive visuals with clean and intuitive navigation",
+    "Ensured consistent performance and responsiveness across all screen sizes",
   ],
-  video: "/assets/projects/project1.mp4",
+  video: "",
   logo: "",
   image: "/assets/projects/blazor-app.jpg",
   tags: [
@@ -58,16 +58,16 @@ export const myProjects = [
 },
 {
   id: 2,
-  title: "Web Dev Portfolio",
+  title: "Animated Clothing Brand Landing Page",
   description:
-    "A modern and professional portfolio website designed to solve the problem of showcasing skills and projects with clarity and impact.",
+    "A modern clothing brand landing page designed with an animated character to create an engaging and interactive brand experience.",
   subDescription: [
-    "Crafted with a sleek, responsive layout for all devices",
-    "Designed using Figma with a focus on clarity and usability",
-    "Showcases projects in a structured, professional manner",
-    "Optimized visuals for fast loading and accessibility",
+    "Built a dynamic, responsive landing page centered around a branded character",
+    "Integrated smooth character motion and UI animations for visual appeal",
+    "Presented clothing collections through bold, modern visual storytelling",
+    "Optimized animations and assets for fast performance across all devices",
   ],
-  href: "https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/9cYFVuEvdp0cGYCKx4vSB0/web-page?node-id=1-41",
+  href: "",
   logo: "",
   image: "/assets/projects/devpage.png",
   tags: [
@@ -77,16 +77,16 @@ export const myProjects = [
 },
 {
   id: 1,
-  title: "Elite Controller Showcase",
+  title: "Cyber Fashion Brand Website",
   description:
-    "A modern, dark-themed landing page for the Xbox Elite Controller, designed to highlight its features with a sleek and intuitive layout.",
+    "A premium techwear fashion website designed with futuristic visuals and a dark, high-end digital aesthetic to showcase modern apparel.",
   subDescription: [
-    "Crafted the UI entirely in Figma with a contemporary dark theme",
-    "Built an interactive prototype to showcase smooth user interactions",
-    "Focused on clean layouts to highlight key controller features",
-    "Optimized for responsive design across desktop and tablet devices",
+    "Designed a premium cyber-styled interface in Figma with strong visual hierarchy",
+    "Created smooth interactive transitions for a cinematic browsing experience",
+    "Structured clean layouts to highlight garment details and textures",
+    "Delivered a fully responsive experience optimized for modern devices",
   ],
-  href: "https://www.figma.com/design/phgBtU6mBrfe4TJ9cK9d2l/1st-project?node-id=22-14&m=dev&t=Lkv8wENtmgDg71lE-1",
+  href: "",
   logo: "",
   image: "/assets/projects/black-page.png",
   tags: [
