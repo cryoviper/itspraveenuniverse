@@ -25,9 +25,17 @@ const Projects = () => {
             className="bg-[#1A1B2D] rounded-2xl p-8 hover:bg-[#23243d] transition-colors duration-200 flex flex-col cursor-pointer w-full sm:w-[48%] lg:w-[30%]"
             onClick={() => openProject(project)}
           >
-            <HoverPreview thumbnail={project.image} video={project.video} title={project.title} />
-            <h3 className="text-white font-bold text-xl mb-2">{project.title}</h3>
-            <p className="text-gray-400 text-sm line-clamp-3">{project.description}</p>
+            <HoverPreview
+              thumbnail={project.image}
+              video={project.video}
+              title={project.title}
+            />
+            <h3 className="text-white font-bold text-xl mb-2">
+              {project.title}
+            </h3>
+            <p className="text-gray-400 text-sm line-clamp-3">
+              {project.description}
+            </p>
             <div className="mt-auto">
               <span className="text-indigo-400 font-medium text-sm">
                 View Project →
@@ -44,9 +52,17 @@ const Projects = () => {
           onClick={closeProject}
         >
           <div
-            className="bg-[#1A1B2D] rounded-2xl p-6 max-w-5xl w-full max-h-[90vh] overflow-y-auto flex flex-col items-center"
+            className="relative bg-[#1A1B2D] rounded-2xl p-6 max-w-5xl w-full max-h-[90vh] overflow-y-auto flex flex-col items-center"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* ✅ CLOSE BUTTON (ONLY ADDED THING) */}
+            <button
+              onClick={closeProject}
+              className="absolute top-4 right-4 text-white text-3xl font-bold bg-black/50 hover:bg-red-600 transition w-10 h-10 rounded-full flex items-center justify-center z-50"
+            >
+              ✕
+            </button>
+
             {/* Video or Screenshot */}
             {modalProject.video ? (
               <video
@@ -65,8 +81,12 @@ const Projects = () => {
               />
             )}
 
-            <h3 className="text-white text-3xl font-bold mb-2">{modalProject.title}</h3>
-            <p className="text-gray-300 text-center mb-4">{modalProject.description}</p>
+            <h3 className="text-white text-3xl font-bold mb-2">
+              {modalProject.title}
+            </h3>
+            <p className="text-gray-300 text-center mb-4">
+              {modalProject.description}
+            </p>
 
             {/* Sub-description list */}
             {modalProject.subDescription && (

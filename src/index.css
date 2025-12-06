@@ -158,3 +158,21 @@ a:hover, button:hover, .btn:hover {
 .field-input-focus {
   @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/20;
 }
+
+@media (max-width: 640px) {
+  /* Adjusting spacing for mobile version */
+  body {
+    padding: 10px;
+    margin: 0;
+  }
+  .section {
+    margin-bottom: 20px;
+  }
+  .hero {
+    padding: 20px;
+  }
+  .navbar {
+    padding: 10px;
+  }
+  /* Add more specific adjustments as needed */
+}
