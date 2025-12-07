@@ -1,11 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { myProjects } from "../constants";
 
 const Projects = () => {
   const [modalProject, setModalProject] = useState(null);
+  const savedScroll = useRef(0);
 
-  if (modalProject) document.body.style.overflow = "hidden";
-  else document.body.style.overflow = "auto";
+  // When modal opens: store scroll, lock body (so background doesn't scroll)
+  // When modal closes: restore body and scroll position.
+  useEffect(() => {
+    if (!modalProject) return;
+
+    // store current scroll
+    savedScroll.current = window.scrollY || window.pageYOffset || 0;
+
+    // add class to allow CSS locking (keeps behavior consistent)
+    try {
+      document.body.classList.add("modal-open");
+      document.documentElement.classList.add("modal-open");
+    } catch (e) {}
+
+    // set inline positioning to prevent accidental reflow on some mobile browsers
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${savedScroll.current}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+
+    return () => {
+      // remove locks
+      try {
+        document.body.classList.remove("modal-open");
+        document.documentElement.classList.remove("modal-open");
+      } catch (e) {}
+
+      // restore inline styles
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+
+      // Restore scroll reliably: temporarily disable smooth scrolling,
+      // restore the position on the next animation frame, then restore
+      // the previous scroll-behavior.
+      try {
+        const prev = document.documentElement.style.scrollBehavior;
+        document.documentElement.style.scrollBehavior = "auto";
+        requestAnimationFrame(() => {
+          window.scrollTo(0, savedScroll.current || 0);
+          requestAnimationFrame(() => {
+            document.documentElement.style.scrollBehavior = prev || "";
+          });
+        });
+      } catch (e) {
+        // fallback
+        window.scrollTo(0, savedScroll.current || 0);
+      }
+    };
+  }, [modalProject]);
 
   const openProject = (project) => setModalProject(project);
   const closeProject = () => setModalProject(null);
